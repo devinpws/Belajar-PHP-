@@ -317,3 +317,95 @@ Loop dalam array dapat digunakan dengan berbagai versi. berikut adalah beberapa 
 
 ```
 
+## Pengkondisian dalam PHP
+Pengkondisian sangat berguna dalam web serta banyak digunakan dalam pemrograman. secara umum kita dapat gunakan if dan else. berikut adalah contohnya:
+```
+    $punya = 'saya';
+    if($punya == 'saya'){
+        echo "betul sekali itu";
+    }else{
+        echo "salah, bukan itu";
+    }
+```
+Ada berbagai operator yang dapat digunakan dalam pengkondisian. Berikut adalah operator tersebut.
+| Operator | Keterangan |
+| ----------- | ----------- |
+| == | Sama dengan = membandingkan kesamaan nilai |
+| != | Sama dengan = membandingkan kesamaan nilai |
+| === | Membandingkan kesamaan nilai dan type datanya |
+| > dan >= | Besar dari dan besar sama|
+| < dan <= | Kecil dari dan kecil sama|
+| && | Jika kita ingin kedua persyaratan benar |
+| || | Jika kita ingin salah satunya benar|
+
+
+Selanjutnya untuk persyaratannya lebih dari satu maka dapat menggunakan else if.
+```
+    //if bercabang yaitu if didalam if
+    $istri = 12000;
+    $tempe = 6000;
+    $suami = 5000;
+    if($suami>$tempe){
+        echo "Suami beli tempe";
+    }else if($istri>$tempe){
+        echo "Istri membeli tempe, ";
+        if($istri >= $tempe*2){
+            echo "Istri beli 2 tempe";
+        }
+    }else{
+        echo "tidak bisa beli";
+    }
+```
+Pada dasarnya untuk if dan else mengambil prinsip true dan false, jadi jika true dia lakukan sesuatu dan false dia lakukan sesuatu.
+```
+    //pada dasarnya hasil dari if dan else itu adalah true dan false
+    echo "<p>====&& dan ||===</p>";
+    //&& digunakan jika kita ingin kedua persyaratan benar
+    //|| digunakan jika kita ingin salah satunya benar
+    $bayu = 12000;
+    $jaket = 6000;
+    $ani = 5000;
+    if($ani > $jaket && $bayu > $jaket){//hasilnya tidak bisa beli karena keduanya harus terpenuhi
+        echo "boleh beli";
+    }else{
+        echo "tidak bisa beli";
+    }
+```
+Pengkondisian selanjutnya adalah nested if atau pengkondisian bercabang. yaitu terdapat if didalam if.
+```
+    //if bercabang yaitu if didalam if
+    $istri = 12000;
+    $tempe = 6000;
+    $suami = 5000;
+    if($suami>$tempe){
+        echo "Suami beli tempe";
+    }else if($istri>$tempe){
+        echo "Istri membeli tempe, ";
+        if($istri >= $tempe*2){
+            echo "Istri beli 2 tempe";
+        }
+    }else{
+        echo "tidak bisa beli";
+    }
+```
+Cara lain selain if dan else adalah dengan switch dan case. berikut adalah contohnya:
+```
+    //ini cara sederhana dalam membentuk if dan else
+    $nim = 12345;
+    switch($nim){
+        case 123:
+            echo "ini nimnya benar 123";
+        break;
+        case 1234:
+            echo "ini nimnya benar  1234";
+        break;
+        case 12345:
+            echo "ini nimnya benar 12345";
+        break;
+        default:
+            echo "tidak ada yang benar";//default alternatif terakhir untuk melihat syaratnya
+        break;
+    }
+```
+## Fungsi pada PHP
+
