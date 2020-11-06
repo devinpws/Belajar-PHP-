@@ -114,3 +114,206 @@ contoh programnya adalah sebagai berikut:
     echo max(100, 1001, 10045). "<br>";
 ```
 
+## Metode String
+Ada berbagai metode dalam string tapi kita akan bahas yang umum saja. Berikut adalah berbagai metode tersebut.
+| Metode | Keterangan |
+| ----------- | ----------- |
+| strlen | Menghitung panjang string |
+| str_word_count | Menghitung jumlah kata dalam string |
+| str_replace | Menggantikan nilai string|
+| str_repeat | Mengulangi string sebanyak n kali |
+| str_shuffle | Mengacak posisi string |
+
+Contoh kodenya adalah:
+```
+    $kalimat = 'Saya adalah manusia';
+    // strlen : menghitung panjang string
+    echo strlen($kalimat). "<br>";
+    //str_word_count : menghitung kata yang ada
+    echo str_word_count($kalimat). "<br>";
+    //str_replace(find,replace,string) : fungsinya untuk menggantikan string dengan string yang baru
+    echo str_replace('Saya','Aku',$kalimat). "<br>";
+    //str_repeat(text, times) : fungsinya untuk mencetak string dengan jumlah banyak
+    echo str_repeat('Saya',10). "<br>";
+    //str_shuffle(text) : fungsinya untuk mengacak string
+    echo str_shuffle($kalimat). "<br>";
+```
+
+## Array dalam PHP
+Ada dua cara penulisan array dalam PHP, dibawah ini akan ditampilkan contohnya. Kemudian untuk print array dapat menggunakan print_r untuk menampilkan semuanya. atau $array[n] untuk menampilkan nilai salah satu array.
+```
+    //penulisan array ada 2:
+    $sayur = array('Bayam','Paku','Sawi','Bayam');
+    $juventus = ['Pirlo', 'Buffon', 'Ronaldo'];
+
+    //print ada dua tipe:
+    //print semua
+    print_r($sayur);
+    echo "<br>";
+    //print satuan
+    echo $juventus[0];
+```
+
+## Metode dalam Array
+Berikut ini adalah metode umum dalam array yaitu:
+| Metode | Keterangan |
+| ----------- | ----------- |
+| array_unique | Menampilkan nilai array yang unik tanpa duplikasi |
+| array_reverse | Membalikkan posisi array dari yang besar ke terkecil |
+| shuffle | Mengacak posisi array |
+| count | Menghitung jumlah array|
+| sort | Mengurutkan array dari abjad a-z |
+
+Contoh programnya adalah sebagai berikut:
+```
+    //array_unique: menampilkan isi array yang unik saja
+    print_r(array_unique($sayur));
+    echo "<br>";
+    //array_reverse : membalikkan posisi array
+    print_r(array_reverse($sayur));
+    echo "<br>";
+    //shuffle: mengacak array
+    shuffle($juventus);
+    print_r($juventus);
+    echo "<br>";
+    //count: menghitung jumlah array
+    echo count($sayur);
+    echo "<br>";
+    //sort: mengurutkan sesuai abjad dari a-z
+    sort($juventus);
+    print_r($juventus);
+```
+
+## Associative Array
+Associative Array memiliki struktur yang sedikit beda yaitu terdapat tambahan key => value. Berikut kode programnya.
+```
+    //key => nilainya
+    $mahasiswa = array("nama"=>"Devin",
+                        "nim"=>"G64169999",
+                        "jurusan"=>"ilmu komputer"
+                );
+    //print array
+    print_r($mahasiswa);
+    echo "<br>";
+
+    //kita juga dapat mengganti nilai Array
+    $mahasiswa['nama'] = "Devin Purnawansyah";
+
+    //print salah satunya:
+    echo "Namanya adalah: ". $mahasiswa['nama'];
+    echo "<br>";
+    echo "Dia memiliki NIM: ". $mahasiswa['nim'] . " dan Jurusannya adalah: ". $mahasiswa['jurusan'];
+
+```
+
+## Associative Array Method
+Metode yang akan kita bahas ada 3 yaitu: array_values, array_keys, array_merge.
+| Metode | Keterangan |
+| ----------- | ----------- |
+| array_values | Mengubah asosiatif array menjadi array biasa |
+| array_keys | Menampilkan keys yang ada dalam array |
+| array_merge| Menggabungkan 2 array |
+
+Contoh programnya adalah sebagai berikut:
+```
+    $mahasiswaipb = array("nama"=>"Abdul Alif",
+                        "nim"=>"G64169999",
+                        "jurusan"=>"Statistika"
+                );
+    $beasiswa = array("penyedia"=>"Kemendikbud",
+                "jumlah"=>"3 juta"
+                );
+    //array_values: Dia mengubah asosiatif array menjadi array biasa
+    print_r(array_values($mahasiswaipb));
+    echo "<br>";
+
+    //array_keys: menampilkan keys yang ada dalam array
+    print_r(array_keys($mahasiswaipb));
+    echo "<br>";
+
+    //array_merge: menggabungkan 2 array
+    print_r(array_merge($mahasiswaipb, $beasiswa));
+
+```
+
+## Multi Dimensi Array
+Multi dimensi array adalah memasukkan array dalam array. berikut adalah programnya.
+```
+    //dalam satu array kita dapat memasukkan banyak array
+    $tipe = array(
+        array("Mahasiswa","Rajin","Suka Demo"),
+        array("Dosen", "Galak", "Suka Libur"),
+        array("Rektor", "Tegas", "Suka Nyanyi")
+    );
+
+    //posisi array:
+    //00 01 02
+    //10 11 12
+    //20 21 22
+
+    //kita coba print keseluruhan
+    print_r($tipe);
+    echo "<br>";
+    //kita coba ambil satu nilai:
+    echo $tipe[2][2];
+```
+
+## Loop dalam PHP
+Loop atau perulangan digunakan untuk membuat fungsi perulangan yang banyak digunakan di dalam pemrograman. Misalnya kita ingin mencetak sebuah kalimat sebanyak sepuluh kali maka kita bisa membuatnya dengan loop tanpa membuat print/echo sebanyak sepuluh kali.
+1. for loop
+```
+    for($i=0; $i < 5; $i++){
+        echo "Mari Belajar <br>";
+    }
+```
+2. while loop
+```
+    $kue = ['Donat', 'Bolu','Ultah','Odading'];
+    //while
+    $i=0;
+    while($i<count($kue)){
+        echo $kue[$i]."<br>";
+        $i++;
+    }
+```
+3. do while loop
+```
+    $j=0;
+    $roti = ['Roma', 'Sariroti','Tawar','Kelapa'];
+    do{
+        echo $roti[$j]."<br>";
+        $j++;
+    }while($j<count($roti));
+```
+
+## Array & Loop
+Loop dalam array dapat digunakan dengan berbagai versi. berikut adalah beberapa contohnya.
+1. for loop untuk array
+```
+    $makanan = ['Ayam', 'Ikan', 'Tahu','Tempe'];
+
+    for($i=0; $i < count($makanan); $i++){
+        echo $makanan[$i]."<br>";
+    }
+```
+2. foreach untuk array
+```
+    //ada cara lain juga untuk menampilkan semua isi array yaitu dengan foreach
+    $nonton = ['Netflix', 'Diney+', 'Hulu', 'Prime Video'];
+    foreach($nonton as $n){
+        echo $n."<br>";
+    }
+    
+```
+3. Loop di Associative Array
+```
+    $mahasiswaub = array("nama"=>"Munaf Ali",
+                        "nim"=>"UB23421",
+                        "jurusan"=>"Agama Budha"
+    );
+    foreach($mahasiswaub as $key =>$value){
+        echo $key. " = ". $value."<br>";
+    }
+
+```
+
