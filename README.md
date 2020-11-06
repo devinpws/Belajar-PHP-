@@ -408,4 +408,90 @@ Cara lain selain if dan else adalah dengan switch dan case. berikut adalah conto
     }
 ```
 ## Fungsi pada PHP
+Fungsi pada PHP dapat dilakukan dengan deklarasi function namafungsi(). berikut contoh penerapan programnya.
+```
+    function tampilkan(){
+        echo "------------";
+        echo "Devin Purnawansyah";
+        echo "------------";
+    }
+    function jarak(){
+        echo "<br>";
+    }
+    //print
+    tampilkan();
+    jarak();
+    tampilkan();
+    jarak();
+```
+Kita juga dapat menambahkan parameter dalam fungsi. berikut adalah contohnya.
+```
+    function rumah( $text ){//parameter
+        $text = "Rumah ". $text;
+        echo "------------";
+        echo $text;
+        echo "------------";
+    }
+    function rumah2( $text2, $jalan ){// boleh dua atau lebih parameter
+        $text2 = "Rumah ". $text2. " ". $jalan;
+        echo "------------";
+        echo $text2;
+        echo "------------";
+    }
+    //print
+    rumah('Devin');
+    jarak();
+    rumah2('Anggi', 'jln raya sosoklu');
+    jarak();
 
+```
+
+Kemudian ada syntax return yang berfungsi untuk mengembalikan nilai dari yang di return. Berikut contohnya:
+```
+    //return berfungsi untuk mengembalikan nilainya jadi fungsi tidak bisa langsung di print, mesti pakai echo untuk menampilkannnya
+    function penjumlahan($x,$y){
+        $z=$x + $y;
+        return $z;
+    }
+    $hasil = penjumlahan(2,6);
+    echo $hasil;
+
+```
+Selanjutnya ada scope yang menandakan variabel global dan variabel lokal. variabel global adalah variabel yang berada di luar fungsi yang dapat digunakan untuk banyak fungsi. variabel lokal adalah variabel yang hanya bisa digunakan di dalam fungsi. Berikut adalah contoh programnya.
+```
+    //scope adalah untuk menandakan variabel tersebut lokal atau global.
+    $as = 20;
+    $bs = 10;
+
+    function hasil(){
+        global $as, $bs;//ini penanda dia global karena berada di luar fungsi
+        $zs = $as / $bs;
+        return $zs;
+    }
+    echo hasil();
+```
+Ada fungsi yang tidak diketahui atau fungsi tanpa nama (anonymous function). 
+```
+    $giro = function($tulis){
+        echo $tulis;
+    };
+    $giro('Ada-ada aja ya');
+
+```
+Terakhir adalah callback function yaitu memanggil fungsi dalam variabel atau fungsi lainnya. berikut contoh programnya.
+```
+    //callback function adalah memanggil fungsi dalam variabel atau fungsi lainnya
+
+    function kaget($ndak){
+        echo 'AAAAAnjay kaget <br>';
+        $ndak();
+    }
+
+    $ndak = function(){
+        echo 'saya tidak bernama';
+    };
+
+    kaget($ndak);
+    //sebagai tambahan aja ada namanya call_user_function($fungsi, 'isinya apa') = $fungsi('isinya')
+    // ada namanya if (is_callable($fungsi)){} //tugasnya menguji apakah $fungsi adalah fungsi.
+```
